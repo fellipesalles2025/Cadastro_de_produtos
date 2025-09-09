@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+    --fonte-principal: "Inter", sans-serif;
+    --preto: #181717;
+    --cinza: #333131;
+    --branco: #e9e0e0;
+}
+
+
+body{
+    background-color: var(--preto);
+    color: var(--branco);
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: var(--fonte-principal);
+}
+
+.container{
+    width: 85%;
+    margin: 4em auto;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.form{
+    padding: 1.5em;
+    background-color: var(--cinza);
+    border-radius: 10px;
+
+}
+
+.content-field{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 2em;
+}
+
+.field{
+    padding: 0.5em;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid var(--preto);
+}
+
+.content-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.button{
+    padding: 1em 2em;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--preto);
+    background-color: var(--branco);
+}
+
+.product-item{
+    margin-top: 2em;
+    line-height: 29px;
+    background-color: var(--cinza);
+    padding: 1.5em;
+    border-radius: 10px;
+}
+
+.product-item div{
+    margin-top: 0.5em;
+}
+
+.error{
+    background-color: #f61e1e;
+    padding: 1em;
+    margin-top: 1.5em;
+    border-radius: 10px;
+}
