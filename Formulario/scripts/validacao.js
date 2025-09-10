@@ -12,34 +12,39 @@ btnCadastro.addEventListener('click', (event) => {
 
     const codigo = document.querySelector('#code')
     const descricao = document.querySelector('#desc')
+    const marca = document.querySelector('#marca')
     const categoria = document.querySelector('#cat')
     const preco = document.querySelector('#price')
     const quantidade = document.querySelector('#qtde')
 
     if(codigo.value === ''){
         
-        codigo.style.border = '2px solid red'
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
 
+        codigo.style.border = '2px solid red'
 
         setTimeout(() => {
 
             codigo.style.border = '2px solid #181717'
 
             }, 3000)
-    } else {
 
+    } else {
         
         const product = {
-            code: codigo.value,
-            description: descricao.value,
-            category: categoria.value,
-            price: preco.value,
-            quantity: quantidade.value
+            codigo: codigo.value, 
+            descricao: descricao.value,  
+            marca: marca.value,    
+            categoria: categoria.value,
+            preco: preco.value,    
+            quantidade: quantidade.value 
         }
         
-        const {code, description, category, price, quantity} = product
+        const { codigo: c, descricao: d, marca: m, categoria: cat, preco: p, quantidade: q } = product;
 
-        console.log(code)
     }
 
 })
