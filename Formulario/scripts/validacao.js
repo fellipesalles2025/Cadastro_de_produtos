@@ -4,7 +4,7 @@ const formulario = document.querySelector('#my-form')
 
 const fields = Array.from(document.querySelectorAll('.field'))
 
-const errorMessage = document.querySelector('#msg')
+const message = document.querySelector('#msg')
 
 
 btnCadastro.addEventListener('click', (event) => {
@@ -15,9 +15,9 @@ btnCadastro.addEventListener('click', (event) => {
 
     if(isEmpty){
 
-        errorMessage.textContent = 'Preencha os campos marcados em vermelho'
+        message.textContent = 'Preencha os campos marcados em vermelho'
 
-        errorMessage.classList.add('error')
+        message.classList.add('error')
 
         window.scrollTo({
             top: 0,
@@ -26,9 +26,9 @@ btnCadastro.addEventListener('click', (event) => {
 
         setTimeout(() => {
 
-            errorMessage.textContent = ''
+            message.textContent = ''
 
-            errorMessage.classList.remove('error')
+            message.classList.remove('error')
 
         }, 3000)
 
@@ -72,24 +72,6 @@ btnCadastro.addEventListener('click', (event) => {
 
                 formulario.reset();
 
-                errorMessage.textContent = 'Cadastro realizado com sucesso'
-
-                errorMessage.classList.add('success')
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })
-
-                setTimeout(() => {
-
-                    errorMessage.textContent = ''
-
-                    errorMessage.classList.remove('success')
-
-                }, 3000)
-
-
                 fetch('http://localhost:8080/produtos', {
                     method: 'POST',
                     headers: {
@@ -98,15 +80,30 @@ btnCadastro.addEventListener('click', (event) => {
                     body: JSON.stringify(product)
                     })
                     .then(response => response.json())
-                    .then(data => console.log(data));
+                    .then(data => {
+                        console.log(data)
+
+                        message.textContent = 'Cadastro realizado com sucesso'
+
+                        message.classList.add('success')
+
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        })
+                        
+                        setTimeout(() => {
+                            window.location.href = './index.html';
+                        }, 2000);
+                    });
 
             } else {
 
                 if(isNaN(preco)){
 
-                    errorMessage.textContent = 'Entrada inválida, insira um valor numérico'
+                    message.textContent = 'Entrada inválida, insira um valor numérico'
 
-                    errorMessage.classList.add('error')
+                    message.classList.add('error')
 
                     window.scrollTo({
                         top: 0,
@@ -117,9 +114,9 @@ btnCadastro.addEventListener('click', (event) => {
 
                     setTimeout(() => {
 
-                        errorMessage.textContent = ''
+                        message.textContent = ''
 
-                        errorMessage.classList.remove('error')
+                        message.classList.remove('error')
 
                         precoField.style.border = '2px solid #181717'
 
@@ -128,9 +125,9 @@ btnCadastro.addEventListener('click', (event) => {
 
                 if(isNaN(quantidade)){
                     
-                    errorMessage.textContent = 'Entrada inválida, insira um valor numérico'
+                    message.textContent = 'Entrada inválida, insira um valor numérico'
 
-                    errorMessage.classList.add('error')
+                    message.classList.add('error')
 
                     window.scrollTo({
                         top: 0,
@@ -141,9 +138,9 @@ btnCadastro.addEventListener('click', (event) => {
 
                     setTimeout(() => {
 
-                        errorMessage.textContent = ''
+                        message.textContent = ''
 
-                        errorMessage.classList.remove('error')
+                        message.classList.remove('error')
 
                         quantField.style.border = '2px solid #181717'
 

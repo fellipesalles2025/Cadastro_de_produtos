@@ -5,81 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Cadastro de mercadorias</title>
+    <title>Produtos cadastrados</title>
 </head>
 <body>
-
     <main class="home">
 
-        <div class="container">
+        <div class="container-lista">
 
             <div class="title">
 
-                <h1>Cadastro de produtos</h1>
+                <h1>Produtos cadastrados</h1>
 
-                <div id="msg"></div>
+                <a href="cadastro.html" class="btn-link" id="btn-cadastro">
+                    Adicionar produto 
+                    <img src="assets/plus_icon_white.svg" alt="icone de adicionar" class="icon" id="icon-add">
+                </a>
+                
             </div>
-            
-            <form class="form" id="my-form">
-                
-                <div class="content-field">
-                        
-                    <label for="code">Código</label>
-                    <input type="text" name="code" id="code" class="field">
-                    
-                </div>
 
-                <div class="content-field">
-                        
-                    <label for="desc">Descrição</label>
-                    <input type="text" name="desc" id="desc" class="field">
-                    
-                </div>
-
-
-                <div class="content-field">
-                        
-                    <label for="marca">Marca</label>
-                    <input type="text" name="marca" id="marca" class="field">
-                    
-                </div>
-
-                <div class="content-field">
-                        
-                    <label for="cat">Categoria</label>
-                    <input type="text" name="cat" id="cat" class="field">
-                    
-                </div>
-
-                <div class="content-field">
-                        
-                    <label for="price">Preço</label>
-                    <input type="text" name="price" id="price" class="field">
-                    
-                </div>
-
-                <div class="content-field">
-                        
-                    <label for="qtde">Quantidade</label>
-                    <input type="text" name="qtde" id="qtde" class="field">
-                    
-                </div>
-
-                <div class="content-buttons">
-
-                    <input type="reset" value="Limpar" class="button">
-
-                    <input type="submit" value="Cadastrar" id="btn-cadastrar" class="button">
-
-                </div>
-                
-            </form>
-
-            <ul id="pr-list"></ul>
-
+            <ul class="product-list" id="pr-list">
+            </ul>
         </div>
     </main>
 
-    <script src="scripts/validacao.js"></script>
+    <script src="scripts/getProdutos.js"></script>
 </body>
 </html>

@@ -16,6 +16,7 @@ public class ProdutoController {
         this.produtoService = produtoService;
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping
     public List<Produto> getAll(){
         return produtoService.getAll();
