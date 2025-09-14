@@ -21,6 +21,7 @@ public class ProdutoController {
         return produtoService.getAll();
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping
     public Produto save(@RequestBody Produto produto){
         return produtoService.save(produto);
